@@ -1,1 +1,930 @@
-hello world
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico">
+    <title>Navition AI - Smart Navigation for AI Transformation</title>
+    <style>
+  th {
+    background-color: #4e00ff;
+    color: white;
+    text-align: left;
+    border-radius: 6px;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f6fa;
+  }
+		.typewriter {
+			font-size: 32px;
+			font-family: Verdana;
+			border-right: 8px solid #ff00fc;
+			white-space: nowrap;
+			overflow: hidden;
+			-webkit-animation: typing 4s steps(20, end), blink-caret .75s step-end infinite;
+			animation: typing 4s steps(20, end), blink-caret .75s step-end infinite;
+		}
+
+		/* The typing effect */
+		@keyframes typing {
+			from { width: 0 }
+			to { width: 100% }
+		}
+
+		@-webkit-keyframes typing {
+			from { width: 0 }
+			to { width: 100% }
+		}
+
+		/* The typewriter caret/blinking cursor */
+		@keyframes blink-caret {
+			from, to { border-color: transparent }
+			50% { border-color: #4b27ff; }
+		}
+
+		@-webkit-keyframes blink-caret {
+			from, to { border-color: transparent }
+			50% { border-color: #ffffff; }
+		}
+
+		.container {
+			position: relative;
+			top: 0;
+			left: -343;
+		}
+		.image {
+			position: absolute;
+			z-index: 1;
+		}
+		.image.back {
+			top: 2;
+			animation: spin 10s infinite linear;
+			z-index: 0;
+		}
+		@keyframes spin {
+			from { transform: rotate(0deg); }
+			to { transform: rotate(360deg); }
+		}
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #cfcfcf;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        header img {
+            width: 300px;
+            height: 60px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+        nav a {
+            color: #fff;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            flex: 1;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        section {
+            padding: 40px;
+            margin: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            font-size: 48px;
+            margin-top: 0px;
+            margin-bottom: -18px;
+        }
+        h2 {
+            color: #333;
+            font-size: 32px;
+            margin-top: 0px;
+            margin-bottom: -12px;
+        }
+        .service-container, .team-container, .contact-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .service-item, .team-member, .contact-item {
+            width: 45%;
+            margin: 20px 0;
+        }
+        .team-member img {
+            border-radius: 50%;
+            width: 140px;
+            height: 140px;
+            margin-right: 20px;
+        }
+        .team-member {
+            display: flex;
+            align-items: center;
+        }
+        .team-member div {
+            flex: 1;
+        }
+        .service-item pre {
+            display: none;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .service-item button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #4e00ff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 16px;
+        }
+        .service-item button:hover {
+            background-color: #ff00fc;
+            box-shadow: 0 0 12px 2px #ff00fc;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        /* Contact Section - Adjusted width for better text area */
+        .contact-container img {
+            width: 640px;
+            height: 450px;
+            margin-right: 20px;
+        }
+        .about-img {
+    width: 100%;
+    height: auto;
+}
+        .contact-container, .about-section {
+            margin-bottom: 40px;
+        }
+        .contact-container div {
+            flex: 2;
+        }
+        /* Flexbox layout adjustments to ensure responsiveness */
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+        .contact-item {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .about-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.about-section img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: top;
+    flex: 1;
+}
+
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="logo.png" alt="Navition Tech AI Logo">
+    <h1>
+        <script>
+            const imageFront = document.querySelector('.image:not(.back)');
+            const imageBack = document.querySelector('.image.back');
+            
+            imageFront.addEventListener('mouseenter', () => {
+              imageBack.style.animationDuration = '0.8s';
+            });
+            
+            imageFront.addEventListener('mouseleave', () => {
+              imageBack.style.animationDuration = '10s';
+            });
+              </script>
+            <span class="typewriter" style="color: #ff00fc;"></span>
+            <script>
+              let texts = [
+                'Welcome to Navition Tech AI',
+                'Custom AI Solutions for Business Optimization.',
+                'Predictive Analytics and Data Insights.',
+                'Natural Language Processing (NLP) for Enhanced Customer Interaction.',
+                'Computer Vision for Real-Time Object Detection and Visual Analysis.',
+                'Machine Learning for Process Automation and Efficiency.',
+                'AI-Powered Chatbots for Customer Support and Engagement.'
+              ];
+              let index = 0;
+              let requestId = null;
+              let isTyping = false;
+              let isDeleting = false;
+              let typingSpeed = 100;
+              let deletingSpeed = 50;
+              let pauseTime = 2500;
+              let waitTime = 100;
+            
+              function startTypewriter() {
+                if (isTyping || isDeleting) return;
+                cancelAnimationFrame(requestId);
+                isTyping = true;
+                document.querySelector('.typewriter').classList.remove('cursor');
+                setTimeout(function() {
+                  if (!isDeleting && isTyping) {
+                    requestId = requestAnimationFrame(type);
+                  }
+                }, waitTime);
+              }
+            
+              function type() {
+                let text = texts[index];
+                let length = text.length;
+                if (isTyping && length > document.querySelector('.typewriter').textContent.length) {
+                  document.querySelector('.typewriter').textContent += text.charAt(document.querySelector('.typewriter').textContent.length);
+                  requestId = requestAnimationFrame(type);
+                } else {
+                  isTyping = false;
+                  isDeleting = true;
+                  document.querySelector('.typewriter').classList.add('cursor');
+                  setTimeout(function() {
+                    requestId = requestAnimationFrame(deleteChar);
+                  }, pauseTime);
+                }
+              }
+            
+              function deleteChar() {
+                let text = texts[index];
+                let length = text.length;
+                if (isDeleting && document.querySelector('.typewriter').textContent.length > 0) {
+                  document.querySelector('.typewriter').textContent = document.querySelector('.typewriter').textContent.substring(0, document.querySelector('.typewriter').textContent.length - 1);
+                  requestId = requestAnimationFrame(deleteChar);
+                } else {
+                  isDeleting = false;
+                  index++;
+            
+            if (index === 4 || index === 5 || index === 6) {
+              document.querySelector('.typewriter').style.color = '#ff00fc';
+            } else {
+              document.querySelector('.typewriter').style.color = '#ff00fc';
+            }
+            
+                  if (index > texts.length - 1) {
+                    index = 0;
+                  }
+                  setTimeout(function() {
+                    startTypewriter();
+                  }, typingSpeed);
+                }
+              }
+            
+              startTypewriter();
+              window.addEventListener('focus', startTypewriter);
+              window.addEventListener('blur', function() {
+                cancelAnimationFrame(requestId);
+                isTyping = false;
+                isDeleting = false;
+                document.querySelector('.typewriter').textContent = '';
+              });
+            </script>
+    </h1>
+</header>
+
+<nav>
+    <a href="#about">About Us</a>
+    <a href="#cases">Focus</a>
+    <a href="#services">Services</a>
+    <a href="#team">Our Team</a>
+    <a href="#contact">Contact Us</a>
+</nav>
+
+<img class="about-img" src="about-image.jpg">
+<section id="about" class="about-section">
+    <h1><img src="https://img.icons8.com/ios-filled/40/000000/company.png" alt="AI Icon" /> About Us</h1>
+    <div>
+        <div style="flex: 1;">
+            <p style="font-size: 16pt;"><b>Navition AI Technology Transformation Solutions</b></p>
+            <p>At Navition AI, we specialize in guiding traditional small businesses through their AI transformation journey—offering smart, scalable tech solutions and personalized support to help them thrive in a changing world.</p>
+            <p>Harnessing the power of AI, we specialize in delivering tailored solutions that drive business innovation. As a dynamic and agile team, we offer deep expertise in AI technologies and machine learning applications, crafting customized solutions that meet the specific needs of each business.</p>
+            <p>By leveraging advanced AI algorithms and machine learning models, we help companies optimize operations, enhance customer experiences, automate workflows, and unlock valuable data insights. Whether it's predictive analytics, natural language processing (NLP), or computer vision, our expertise in these fields enables businesses to make smarter decisions and improve overall efficiency.</p>
+            <p>Unlike larger corporations, we provide the flexibility to adapt quickly and offer high-quality, cost-effective solutions. This ability to personalize and deliver with precision ensures that we can meet your unique business challenges without the overhead of larger organizations.</p>
+            <p>AI is more than just a trend; it’s a powerful tool to drive business growth and transformation. With a focus on measurable results and seamless integration, our solutions empower businesses to stay ahead in a fast-evolving marketplace.</p>
+            <p>Let's collaborate to create AI-driven solutions that deliver tangible results and support your business’s long-term success.</p>
+        </div>
+    </div>
+</section>
+
+<section id="cases">
+    <h1><img src="https://img.icons8.com/ios-filled/40/000000/machine-learning.png" alt="Machine Learning Icon" /> Navition Technology Focus</h1>
+    <div class="service-container">
+        <!-- Case 1 -->
+        <div class="service-item">
+            <h3>Customer Churn Prediction</h3>
+            <p><b>Language:</b> Python | <b>Technology:</b> Machine Learning (Scikit-learn)</p>
+            <p>Predictive analytics for customer churn, utilizing machine learning algorithms such as Random Forest to analyze and predict customer behavior.</p>
+            <button onclick="toggleCode('code1')">Show/Hide Code</button>
+            <pre id="code1">
+                from sklearn.model_selection import train_test_split
+                from sklearn.ensemble import RandomForestClassifier
+                from sklearn.metrics import accuracy_score
+                
+                # Preparing data
+                X = customer_data.drop('churn', axis=1)
+                y = customer_data['churn']
+                
+                # Splitting data
+                X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+                
+                # Model training
+                model = RandomForestClassifier(n_estimators=100, random_state=42)
+                model.fit(X_train, y_train)
+                
+                # Predictions and evaluation
+                y_pred = model.predict(X_test)
+                accuracy = accuracy_score(y_test, y_pred)
+                print(f'Accuracy: {accuracy}')                
+            </pre>
+        </div>
+        <!-- Case 2 -->
+        <div class="service-item">
+            <h3>Real-time Object Detection</h3>
+            <p><b>Language:</b> Python | <b>Technology:</b> Computer Vision (TensorFlow, OpenCV)</p>
+            <p>Real-time object detection in surveillance video using deep learning models, enabling accurate and efficient monitoring of critical areas.</p>
+            <button onclick="toggleCode('code2')">Show/Hide Code</button>
+            <pre id="code2">
+                import cv2
+                import tensorflow as tf
+                
+                # Load pre-trained model
+                model = tf.saved_model.load('ssd_mobilenet_v2/saved_model')
+                
+                # Load video
+                cap = cv2.VideoCapture('surveillance_video.mp4')
+                
+                while cap.isOpened():
+                    ret, frame = cap.read()
+                    if not ret:
+                        break
+                
+                    # Object detection
+                    input_tensor = tf.convert_to_tensor(frame)
+                    detections = model(input_tensor)
+                
+                    # Draw bounding boxes on objects detected
+                    for detection in detections['detection_boxes']:
+                        cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
+                
+                    cv2.imshow('Object Detection', frame)
+                    if cv2.waitKey(1) & 0xFF == ord('q'):
+                        break
+                
+                cap.release()
+                cv2.destroyAllWindows()                
+            </pre>
+        </div>
+        <!-- Case 3 -->
+        <div class="service-item">
+            <h3>Sentiment Analysis</h3>
+            <p><b>Language:</b> Python | <b>Technology:</b> NLP (Transformers, Hugging Face)</p>
+            <p>Leveraging advanced NLP models to analyze customer sentiment in real-time, helping businesses understand customer feedback and improve engagement.</p>
+            <button onclick="toggleCode('code3')">Show/Hide Code</button>
+            <pre id="code3">
+                from transformers import pipeline
+
+                # Load pre-trained sentiment analysis model
+                sentiment_analyzer = pipeline('sentiment-analysis')
+                
+                # Sample text
+                text = "This product is fantastic! I love it!"
+                
+                # Analyze sentiment
+                result = sentiment_analyzer(text)
+                print(result)                
+            </pre>
+        </div>
+        <!-- Case 4 -->
+        <div class="service-item">
+            <h3>Sales Prediction</h3>
+            <p><b>Language:</b> R | <b>Technology:</b> Time Series Forecasting (ARIMA)</p>
+            <p>Using time series forecasting to predict future sales, enabling better planning and inventory management for businesses.</p>
+            <button onclick="toggleCode('code4')">Show/Hide Code</button>
+            <pre id="code4">
+                library(forecast)
+
+                # Load sales data
+                sales_data <- ts(sales_data, frequency=12, start=c(2015, 1))
+                
+                # Fit ARIMA model
+                model <- auto.arima(sales_data)
+                
+                # Forecasting next 12 months
+                forecasted_values <- forecast(model, h=12)
+                plot(forecasted_values)                
+            </pre>
+        </div>
+        <!-- Case 5 -->
+        <div class="service-item">
+            <h3>Product Recommendation</h3>
+            <p><b>Language:</b> Python | <b>Technology:</b> Collaborative Filtering (Surprise Library)</p>
+            <p>Developing a collaborative filtering-based recommendation system that helps companies personalize product suggestions for users.</p>
+            <button onclick="toggleCode('code5')">Show/Hide Code</button>
+            <pre id="code5">
+                from surprise import SVD, Dataset, Reader
+                from surprise.model_selection import train_test_split
+                from surprise import accuracy
+                
+                # Load data
+                reader = Reader(line_format='user item rating timestamp', sep='\t')
+                data = Dataset.load_from_df(ratings_data[['userId', 'productId', 'rating']], reader)
+                
+                # Train-test split
+                trainset, testset = train_test_split(data, test_size=0.2)
+                
+                # Train the model
+                model = SVD()
+                model.fit(trainset)
+                
+                # Make predictions
+                predictions = model.test(testset)
+                
+                # Calculate RMSE
+                rmse = accuracy.rmse(predictions)
+                print(f'RMSE: {rmse}')                
+            </pre>
+        </div>
+        <!-- Case 6 (New) -->
+        <div class="service-item">
+            <h3>AI-Driven Chatbot</h3>
+            <p><b>Language:</b> Python | <b>Technology:</b> NLP (TensorFlow, Keras)</p>
+            <p>Implementing an AI-driven chatbot that improves customer support by understanding and responding to natural language queries effectively.</p>
+            <button onclick="toggleCode('code6')">Show/Hide Code</button>
+            <pre id="code6">
+                # Import necessary libraries
+                import tensorflow as tf
+                from tensorflow.keras.models import Sequential
+                from tensorflow.keras.layers import Dense, LSTM, Embedding, SpatialDropout1D
+                from tensorflow.keras.preprocessing.sequence import pad_sequences
+                from sklearn.preprocessing import LabelEncoder
+                import numpy as np
+                
+                # Sample data (in real application, you would load your training data here)
+                training_sentences = ["Hi", "How are you?", "What's your name?", "Tell me a joke", "Goodbye"]
+                training_labels = ["greeting", "greeting", "name_query", "joke_request", "goodbye"]
+                
+                # Preprocess data
+                encoder = LabelEncoder()
+                training_labels_encoded = encoder.fit_transform(training_labels)
+                
+                # Tokenizing the sentences
+                from tensorflow.keras.preprocessing.text import Tokenizer
+                tokenizer = Tokenizer()
+                tokenizer.fit_on_texts(training_sentences)
+                X = tokenizer.texts_to_sequences(training_sentences)
+                X = pad_sequences(X, padding='post')
+                
+                # Building the model
+                model = Sequential()
+                model.add(Embedding(input_dim=1000, output_dim=100, input_length=X.shape[1]))
+                model.add(SpatialDropout1D(0.2))
+                model.add(LSTM(100, dropout=0.2, recurrent_dropout=0.2))
+                model.add(Dense(len(set(training_labels)), activation='softmax'))
+                
+                # Compile the model
+                model.compile(loss='sparse_categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+                
+                # Train the model (In real application, use real data and labels)
+                model.fit(X, np.array(training_labels_encoded), epochs=5, batch_size=10)
+                
+                # Sample function to predict the intent of a new sentence
+                def predict_intent(text):
+                    seq = tokenizer.texts_to_sequences([text])
+                    padded = pad_sequences(seq, maxlen=X.shape[1], padding='post')
+                    prediction = model.predict(padded)
+                    intent = encoder.inverse_transform([np.argmax(prediction)])
+                    return intent[0]
+                
+                # Testing the model with a new sentence
+                user_input = "Hello there"
+                predicted_intent = predict_intent(user_input)
+                print(f"The predicted intent for '{user_input}' is: {predicted_intent}")                
+            </pre>
+        </div>
+
+    <!-- Case 7 -->
+<div class="service-item">
+    <h3>Invoice OCR & Data Extraction</h3>
+    <p><b>Language:</b> Python | <b>Technology:</b> OCR (Tesseract, OpenCV)</p>
+    <p>Automating invoice processing by extracting key fields like date, amount, and vendor using optical character recognition and image preprocessing.</p>
+    <button onclick="toggleCode('code7')">Show/Hide Code</button>
+    <pre id="code7">
+        import cv2
+        import pytesseract
+
+        # Load and preprocess image
+        image = cv2.imread('invoice_sample.png')
+        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        gray = cv2.GaussianBlur(gray, (5, 5), 0)
+
+        # OCR extraction
+        text = pytesseract.image_to_string(gray)
+        print("Extracted Text:")
+        print(text)
+    </pre>
+</div>
+
+<!-- Case 8 -->
+<div class="service-item">
+    <h3>AI-Powered Demand Forecasting</h3>
+    <p><b>Language:</b> Python | <b>Technology:</b> Deep Learning (LSTM, Keras)</p>
+    <p>Using recurrent neural networks (LSTM) to accurately predict product demand trends and help businesses optimize inventory and logistics planning.</p>
+    <button onclick="toggleCode('code8')">Show/Hide Code</button>
+    <pre id="code8">
+        from tensorflow.keras.models import Sequential
+        from tensorflow.keras.layers import LSTM, Dense
+        import numpy as np
+
+        # Sample data: time series reshaped to (samples, time_steps, features)
+        X = np.random.rand(100, 10, 1)
+        y = np.random.rand(100)
+
+        # Build LSTM model
+        model = Sequential()
+        model.add(LSTM(50, activation='relu', input_shape=(10, 1)))
+        model.add(Dense(1))
+        model.compile(optimizer='adam', loss='mse')
+
+        model.fit(X, y, epochs=10, verbose=1)
+    </pre>
+</div>
+
+<!-- Case 9 -->
+<div class="service-item">
+    <h3>Smart Document Classification</h3>
+    <p><b>Language:</b> Python | <b>Technology:</b> NLP (Scikit-learn, TF-IDF)</p>
+    <p>Automatically classifying documents (e.g., invoices, resumes, contracts) using text vectorization and classification models for streamlined workflow.</p>
+    <button onclick="toggleCode('code9')">Show/Hide Code</button>
+    <pre id="code9">
+        from sklearn.feature_extraction.text import TfidfVectorizer
+        from sklearn.naive_bayes import MultinomialNB
+
+        documents = ["invoice from supplier", "employment resume", "signed contract"]
+        labels = ["invoice", "resume", "contract"]
+
+        # Vectorize text
+        vectorizer = TfidfVectorizer()
+        X = vectorizer.fit_transform(documents)
+
+        # Train classifier
+        model = MultinomialNB()
+        model.fit(X, labels)
+
+        # Predict new document
+        test_doc = ["this is a supplier bill"]
+        X_test = vectorizer.transform(test_doc)
+        prediction = model.predict(X_test)
+        print(prediction)
+    </pre>
+</div>
+
+<!-- Case 10 -->
+<div class="service-item">
+    <h3>AI-Based Lead Scoring</h3>
+    <p><b>Language:</b> Python | <b>Technology:</b> Logistic Regression (Scikit-learn)</p>
+    <p>Scoring and ranking potential sales leads based on behavior and profile data using classification models to improve conversion rates.</p>
+    <button onclick="toggleCode('code10')">Show/Hide Code</button>
+    <pre id="code10">
+        from sklearn.linear_model import LogisticRegression
+        from sklearn.model_selection import train_test_split
+
+        # Example feature set
+        X = lead_data[['visit_count', 'industry_score', 'email_opened']]
+        y = lead_data['converted']
+
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+        model = LogisticRegression()
+        model.fit(X_train, y_train)
+
+        predictions = model.predict(X_test)
+        print(predictions)
+    </pre>
+</div>
+</div>
+</section>
+
+<section>
+  <h1><img src="https://img.icons8.com/ios-filled/40/000000/data-sheet.png" alt="Data Analytics Icon" /> Order and Reservation System Automation</h1>
+  <p>We specialize in transforming traditional order and reservation systems through AI-powered automation solutions. By integrating intelligent algorithms and real-time data processing, we help businesses reduce manual input errors, optimize booking flows, and enhance customer experience. Our AI-driven enhancements include:</p>
+  <ul>
+    <li>
+      <strong>Demand Forecasting:</strong> Utilizing machine learning models to predict booking trends and peak times, enabling better resource allocation and capacity planning.
+    </li>
+    <li>
+      <strong>Dynamic Scheduling:</strong> Applying reinforcement learning and optimization algorithms to automatically adjust available slots, cancellations, and waitlists, maximizing utilization.
+    </li>
+    <li>
+      <strong>Natural Language Interfaces:</strong> Implementing NLP-powered chatbots and voice assistants to allow customers to make, modify, or cancel reservations effortlessly via conversational AI.
+    </li>
+    <li>
+      <strong>Fraud Detection and Validation:</strong> Employing anomaly detection models to identify suspicious bookings or double entries, ensuring system integrity and reducing revenue loss.
+    </li>
+    <li>
+      <strong>Seamless Integration:</strong> Upgrading legacy systems with APIs and AI microservices that enable scalable, real-time data synchronization and analytics dashboards for operational insights.
+    </li>
+  </ul>
+  <p>Our solutions not only improve operational efficiency but also provide actionable insights to drive smarter business decisions, giving traditional enterprises a competitive edge in the evolving digital landscape.</p>
+</section>
+
+<section>
+<h1><img src="https://img.icons8.com/ios-filled/50/robot.png" alt="AI Icon" /> More Business Use Cases</h1>
+
+<p>Below are 6 advanced AI transformation use cases with code samples and detailed technical solution descriptions that showcase our startup’s expertise in empowering traditional small businesses.</p>
+
+<h2>Intelligent Customer Support Automation</h2>
+<pre><code># Description: Leveraged state-of-the-art NLP models (BERT, RoBERTa) to classify customer intents from chat logs,
+# enabling a 40% reduction in average response time and freeing up human agents for complex queries.
+
+def smart_customer_support(query):
+    # Pre-trained intent classification pipeline
+    intents = ['refund', 'order_status', 'product_info', 'technical_support']
+    matched_intent = nlp_intent_model.predict(query)  
+    response = response_mapping.get(matched_intent, "Thank you for reaching out! A support agent will contact you shortly.")
+    return response
+</code></pre>
+
+<h2>Sales Forecasting</h2>
+<pre><code># Description: Implemented ARIMA and Prophet models on 3 years of historical POS data to forecast daily sales,
+# achieving inventory turnover improvement by 25% and reducing overstock costs.
+
+def sales_forecast(time_series_data):
+    from statsmodels.tsa.arima.model import ARIMA
+    model = ARIMA(time_series_data, order=(5,1,0))
+    model_fit = model.fit()
+    forecast = model_fit.forecast(steps=30)
+    return forecast
+</code></pre>
+
+<h2>Customer Churn Prediction</h2>
+<pre><code># Description: Built a Random Forest classifier using customer transaction, support tickets, and engagement data,
+# enabling early detection of churn with 85% accuracy and driving targeted retention campaigns.
+
+def churn_prediction(customer_features):
+    from sklearn.ensemble import RandomForestClassifier
+    model = RandomForestClassifier(n_estimators=100, max_depth=10)
+    model.fit(X_train, y_train)
+    risk = model.predict_proba(customer_features)[:,1]
+    return risk
+</code></pre>
+
+<h2>Product Recommendation System</h2>
+<pre><code># Description: Developed a hybrid recommendation engine combining collaborative filtering and content-based filtering,
+# increasing average order value by 15% through personalized product suggestions.
+
+def product_recommendation(user_id, user_item_matrix):
+    from sklearn.metrics.pairwise import cosine_similarity
+    user_sim = cosine_similarity(user_item_matrix)
+    similar_users = user_sim[user_id].argsort()[::-1][1:6]
+    recommended_products = aggregate_products(similar_users)
+    return recommended_products
+</code></pre>
+
+<h2>Automated Data Cleaning Pipeline</h2>
+<pre><code># Description: Designed an ETL pipeline using Python and Pandas to automatically detect and correct data anomalies,
+# reducing data preprocessing time by 60% and improving model training data quality.
+
+def clean_data_pipeline(raw_data):
+    import pandas as pd
+    df = pd.DataFrame(raw_data)
+    df.dropna(inplace=True)
+    df = df[df['value'] >= 0]
+    df['date'] = pd.to_datetime(df['date'])
+    df['category'] = df['category'].fillna('Unknown')
+    return df
+</code></pre>
+
+<h2>Social Media Sentiment Analysis</h2>
+<pre><code># Description: Applied fine-tuned transformer models (e.g., BERT, RoBERTa) to classify social media posts sentiment,
+# providing weekly sentiment reports that informed targeted marketing campaigns and brand reputation management.
+
+def sentiment_analysis(text):
+    sentiment = sentiment_model.predict(text)
+    return sentiment
+</code></pre>
+
+<h2>Technical Solution & Impact Summary</h2>
+<p></p>
+<table>
+  <thead>
+    <tr>
+      <th>Case</th>
+      <th>Technical Solution & Impact</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <td><b>NLP-powered intent classification:</b> Integrated pre-trained transformer models to automate customer support, cutting average response time by 40% and increasing customer satisfaction.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>Advanced time series forecasting:</b> Leveraged ARIMA and Facebook Prophet models on multi-year sales data, optimizing inventory management and reducing overstock by 25%.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>Customer churn prediction:</b> Built Random Forest model utilizing multi-dimensional customer data, achieving 85% accuracy to proactively retain high-risk customers.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>Hybrid recommendation engine:</b> Combined collaborative filtering with content-based methods, leading to a 15% uplift in average order value through personalized suggestions.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>Robust ETL and data cleaning:</b> Automated data anomaly detection and imputation, slashing preprocessing times by over half and enhancing downstream AI model accuracy.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>Sentiment analysis with fine-tuned transformers:</b> Delivered actionable sentiment insights from social media, enabling brands to adjust campaigns dynamically and improve reputation management.</td>
+    </tr>
+  </tbody>
+</table>
+</section>
+
+<section id="services">
+  <h2>Navition AI Transformation Services</h2>
+  <p>We provide comprehensive, AI-driven technology solutions designed to accelerate your business transformation and unlock new growth opportunities. Our expertise covers the full spectrum of AI capabilities to ensure your organization benefits from cutting-edge innovation:</p>
+  <ul>
+    <li>
+      <b>Machine Learning for Automation and Workflow Optimization</b><br />
+      Harness advanced machine learning algorithms to automate repetitive tasks, streamline complex workflows, and improve operational efficiency. From predictive maintenance to intelligent process automation, our solutions reduce manual effort and minimize errors, empowering your team to focus on strategic priorities.<p></p>
+    </li>
+    <li>
+      <b>Custom AI Solutions Tailored to Your Business Needs</b><br />
+      We design and implement bespoke AI models and systems that align precisely with your unique business challenges and objectives. Leveraging deep learning, reinforcement learning, and domain-specific data, our customized solutions drive measurable impact across marketing, sales, supply chain, and customer service.<p></p>
+    </li>
+    <li>
+      <b>Natural Language Processing (NLP) for Enhanced Customer Interaction</b><br />
+      Utilize state-of-the-art NLP techniques to understand, interpret, and generate human language. Our AI-powered chatbots, sentiment analysis tools, and voice assistants enable seamless, personalized communication with your customers — improving engagement, satisfaction, and retention.<p></p>
+    </li>
+    <li>
+      <b>Predictive Analytics and Data Insights</b><br />
+      Transform your historical and real-time data into actionable insights with predictive analytics powered by robust statistical models and AI algorithms. Forecast trends, identify risks, and uncover hidden opportunities to make smarter, data-driven decisions that fuel business growth.<p></p>
+    </li>
+    <li>
+      <b>Computer Vision for Object Detection and Visual Analysis</b><br />
+      Implement cutting-edge computer vision technologies to analyze images and videos for quality control, security monitoring, inventory management, and customer behavior analysis. Our solutions leverage convolutional neural networks (CNNs) and real-time processing to extract meaningful visual information that supports operational excellence.<p></p>
+    </li>
+  </ul>
+</section>
+
+<section id="team">
+    <h1><img src="https://img.icons8.com/ios/40/000000/company.png" alt="Link Icon" /> Our Team</h1>
+    <p></p>
+    <div class="team-container">
+        <!-- Team Member 1 -->
+        <div class="team-member">
+            <img src="amina.jpg" alt="Amina Lee">
+            <div>
+                <h3>Amina Aziz</h3>
+                <p>Technical Director</p>
+                <p>Email: amina[at]navitionai.com</p>
+            </div>
+        </div>
+        <!-- Team Member 2 -->
+        <div class="team-member">
+            <img src="veda.jpg" alt="Veda Kannan">
+            <div>
+                <h3>Veda Kannan</h3>
+                <p>Lead Data Scientist</p>
+                <p>Email: veda[at]navitionai.com</p>
+            </div>
+        </div>
+        <!-- Team Member 3 -->
+        <div class="team-member">
+            <img src="member.jpg" alt="Nadiah Habib">
+            <div>
+                <h3>Nadiah Habib</h3>
+                <p>Machine Learning Specialist</p>
+                <p>Email: nadiah[at]navitionai.com</p>
+            </div>
+        </div>
+        <!-- Team Member 4 -->
+        <div class="team-member">
+            <img src="hyun.jpg" alt="Hyun Lee">
+            <div>
+                <h3>Hyun Lee</h3>
+                <p>Data Analysis</p>
+                <p>Email: hyun[at]navitionai.com</p>
+            </div>
+        </div>
+        <!-- Team Member 5 -->
+        <div class="team-member">
+            <img src="zaki.jpg" alt="Zaki Abu">
+            <div>
+                <h3>Zaki Abu</h3>
+                <p>Project Manager</p>
+                <p>Email: zaki[at]navitionai.com</p>
+            </div>
+        </div>
+        <!-- Team Member 6 -->
+        <div class="team-member">
+            <img src="member.jpg" alt="Ran Huang">
+            <div>
+                <h3>Ran Huang</h3>
+                <p>Project Manager</p>
+                <p>Email: ran[at]navitionai.com</p>
+            </div>
+        </div>
+        <!-- Team Member 7 -->
+        <div class="team-member">
+            <img src="member.jpg" alt="Tony Su">
+            <div>
+                <h3>Tony Su</h3>
+                <p>Project Manager</p>
+                <p>Email: tony[at]navitionai.com</p>
+            </div>
+        </div>
+        <!-- Team Member 8 -->
+        <div class="team-member">
+            <img src="member.jpg" alt="Aminah Wong">
+            <div>
+                <h3>Aminah Wong</h3>
+                <p>Marketing</p>
+                <p>Email: aminah[at]navitionai.com</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h1><img src="https://img.icons8.com/ios/40/000000/link.png" alt="Link Icon" /> Contact Us</h1>
+    <p><br></p>
+    <div class="contact-container">
+        <img src="contact-image.jpg" alt="Contact Us Image">
+        <div>
+            <div class="contact-item">
+                <h3>Singapore Office</h3>
+                <p>Amina Lee / Ting Huang</p>
+                <p>Tel: 800-150-3122, Email: sg[at]navitionai.com</p>
+                <p>150 Beach Rd, Gateway West, Singapore</p>
+            </div>
+            <div class="contact-item">
+                <h3>South Korea Office</h3>
+                <p>Min Kim / Jean Song</p>
+                <p>Tel: 308-491-0379, Email: kr[at]navitionai.com</p>
+            </div>
+            <div class="contact-item">
+                <h3>North America Office</h3>
+                <p>To be announced</p>
+                <p>Email: na[at]navitionai.com</p>
+                <p>3rd St 2nd Floor, San Francisco, CA</p>
+            </div>
+            <div class="contact-item">
+                <h3>France Office</h3>
+                <p>Caroline Pierre</p>
+                <p>Email: fr[at]navitionai.com</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Navition Technology LLC. All rights reserved.</p>
+</footer>
+
+<script>
+    function toggleCode(id) {
+        var codeElement = document.getElementById(id);
+        if (codeElement.style.display === "none" || codeElement.style.display === "") {
+            codeElement.style.display = "block";
+        } else {
+            codeElement.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
