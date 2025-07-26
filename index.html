@@ -65,13 +65,16 @@
 			from { transform: rotate(0deg); }
 			to { transform: rotate(360deg); }
 		}
-
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #cfcfcf;
+            background-color: #7d45ff;
             overflow-x: hidden;
+            line-height: 1.5;
         }
         header {
             background-color: #333;
@@ -87,8 +90,9 @@
             display: flex;
             justify-content: center;
             background-color: #444;
-        }
+        }s
         nav a {
+            font-size: 16pt;
             color: #fff;
             padding: 14px 20px;
             text-decoration: none;
@@ -96,14 +100,16 @@
             flex: 1;
         }
         nav a:hover {
-            background-color: #575757;
+            background-color: #603fae;
+            transition: background-color 0.8s ease;
         }
         section {
             padding: 40px;
             margin: 20px;
             background-color: #fff;
-            border-radius: 8px;
+            border-radius: 48px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            scroll-margin-top: 12px;
         }
         h1 {
             color: #333;
@@ -148,7 +154,7 @@
         .service-item button {
             margin-top: 10px;
             padding: 10px 20px;
-            background-color: #4e00ff;
+            background-color: #7d45ff;
             color: white;
             border: none;
             cursor: pointer;
@@ -156,7 +162,7 @@
         }
         .service-item button:hover {
             background-color: #ff00fc;
-            box-shadow: 0 0 12px 2px #ff00fc;
+            box-shadow: 0 0 8px 2px #ff00fc;
         }
         footer {
             text-align: center;
@@ -167,10 +173,25 @@
             bottom: 0;
             width: 100%;
         }
+        
+footer a {
+    font-size: 10pt;
+    color: #c894ff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+footer a:hover,
+footer a:focus {
+    color: #ffffff;
+    outline: none;
+}
         /* Contact Section - Adjusted width for better text area */
         .contact-container img {
-            width: 640px;
-            height: 450px;
+            width: 100%;
+            max-width: 720px;
+            height: auto;
             margin-right: 20px;
         }
         .about-img {
@@ -192,14 +213,13 @@
         }
         .contact-item {
             width: 100%;
-            margin-bottom: 20px;
+            min-width: 300px;
         }
         .about-section {
     display: flex;
-    justify-content: space-between;
     align-items: flex-start;
-    gap: 20px;
     flex-wrap: wrap;
+    margin-bottom: -0px;
 }
 
 .about-section img {
@@ -215,7 +235,7 @@
 <body>
 
 <header>
-    <img src="logo.png" alt="Navition Tech AI Logo">
+    <img src="logo.png">
     <h1>
         <script>
             const imageFront = document.querySelector('.image:not(.back)');
@@ -232,7 +252,7 @@
             <span class="typewriter" style="color: #ff00fc;"></span>
             <script>
               let texts = [
-                'Welcome to Navition Tech AI',
+                'Welcome to Navition AI',
                 'Custom AI Solutions for Business Optimization.',
                 'Predictive Analytics and Data Insights.',
                 'Natural Language Processing (NLP) for Enhanced Customer Interaction.',
@@ -324,9 +344,8 @@
 
 <img class="about-img" src="about-image.jpg">
 <section id="about" class="about-section">
-    <h1><img src="https://img.icons8.com/ios-filled/40/000000/company.png" alt="AI Icon" /> About Us</h1>
+    <h1><img src="https://img.icons8.com/ios-filled/40/000000/company.png" alt="AI Icon" /> About Navition AI</h1>
     <div>
-        <div style="flex: 1;">
             <p style="font-size: 16pt;"><b>Navition AI Technology Transformation Solutions</b></p>
             <p>At Navition AI, we specialize in guiding traditional small businesses through their AI transformation journey—offering smart, scalable tech solutions and personalized support to help them thrive in a changing world.</p>
             <p>Harnessing the power of AI, we specialize in delivering tailored solutions that drive business innovation. As a dynamic and agile team, we offer deep expertise in AI technologies and machine learning applications, crafting customized solutions that meet the specific needs of each business.</p>
@@ -334,12 +353,10 @@
             <p>Unlike larger corporations, we provide the flexibility to adapt quickly and offer high-quality, cost-effective solutions. This ability to personalize and deliver with precision ensures that we can meet your unique business challenges without the overhead of larger organizations.</p>
             <p>AI is more than just a trend; it’s a powerful tool to drive business growth and transformation. With a focus on measurable results and seamless integration, our solutions empower businesses to stay ahead in a fast-evolving marketplace.</p>
             <p>Let's collaborate to create AI-driven solutions that deliver tangible results and support your business’s long-term success.</p>
-        </div>
     </div>
 </section>
-
 <section id="cases">
-    <h1><img src="https://img.icons8.com/ios-filled/40/000000/machine-learning.png" alt="Machine Learning Icon" /> Navition Technology Focus</h1>
+    <h1><img src="https://img.icons8.com/ios-filled/40/000000/machine-learning.png" alt="Machine Learning Icon" /> Navition AI Focus</h1>
     <div class="service-container">
         <!-- Case 1 -->
         <div class="service-item">
@@ -774,7 +791,7 @@ def sentiment_analysis(text):
 </section>
 
 <section id="services">
-  <h2>Navition AI Transformation Services</h2>
+  <h1><img src="https://img.icons8.com/ios/40/000000/service.png" alt="Link Icon" /> Navition Transformation Services</h1>
   <p>We provide comprehensive, AI-driven technology solutions designed to accelerate your business transformation and unlock new growth opportunities. Our expertise covers the full spectrum of AI capabilities to ensure your organization benefits from cutting-edge innovation:</p>
   <ul>
     <li>
@@ -881,9 +898,8 @@ def sentiment_analysis(text):
 
 <section id="contact">
     <h1><img src="https://img.icons8.com/ios/40/000000/link.png" alt="Link Icon" /> Contact Us</h1>
-    <p><br></p>
+    <p></p>
     <div class="contact-container">
-        <img src="contact-image.jpg" alt="Contact Us Image">
         <div>
             <div class="contact-item">
                 <h3>Singapore Office</h3>
@@ -902,17 +918,15 @@ def sentiment_analysis(text):
                 <p>Email: na[at]navition.ai</p>
                 <p>3rd St 2nd Floor, San Francisco, CA</p>
             </div>
-            <div class="contact-item">
-                <h3>France Office</h3>
-                <p>Caroline Pierre</p>
-                <p>Email: fr[at]navition.ai</p>
-            </div>
         </div>
+        <img src="contact-image.jpg" width="100%" alt="Contact Us Image">
     </div>
 </section>
 
 <footer>
     <p>&copy; 2025 Navition Technology LLC. All rights reserved.</p>
+    <a href="privacy-policy.html">Privacy Policy</a> <font style="color:#777;">|</font>
+    <a href="terms-of-service.html">Terms of Service</a>
 </footer>
 
 <script>
